@@ -19,4 +19,10 @@ router.patch("/:id", (req, res) => {
     .catch(err => console.log(err));
 });
 
+router.delete("/:id", (req, res) => {
+  Items.findByIdAndDelete(req.params.id)
+    .then(response => res.send(response))
+    .catch(err => console.log(err));
+});
+
 module.exports = router;
