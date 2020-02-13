@@ -13,6 +13,9 @@ app.use(bodyParser.json());
 // import database connection
 const db = require("./db.js");
 
+// routes
+app.use("/items", require("./controllers/items.js"));
+
 app.listen(4000, err => {
   if (!err) {
     console.log("Server Running");
