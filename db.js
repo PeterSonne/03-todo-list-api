@@ -1,7 +1,9 @@
 const mongoose = require("mongoose");
+require("dotenv");
+let env = process.env;
 
 mongoose.connect(
-  "mongodb://localhost:27017/todo-list",
+  `mongodb://${env.DATABASE}/todo-list`,
   { useNewUrlParser: true, useUnifiedTopology: true },
   err => {
     console.log(err ? err : "Connected to Database");
