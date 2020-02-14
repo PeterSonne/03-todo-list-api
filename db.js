@@ -3,7 +3,7 @@ require("dotenv");
 let env = process.env;
 
 mongoose.connect(
-  `mongodb://${env.DATABASE}/todo-list`,
+  `${env.DATABASE}`,
   { useNewUrlParser: true, useUnifiedTopology: true },
   err => {
     console.log(err ? err : "Connected to Database");
