@@ -2,6 +2,10 @@
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+require("dotenv").config();
+
+// vars
+let env = process.env;
 
 // set up server
 const app = express();
@@ -16,9 +20,9 @@ const db = require("./db.js");
 // routes
 app.use("/items", require("./controllers/items.js"));
 
-app.listen(4000, err => {
+app.listen(env.PORT, err => {
   if (!err) {
-    console.log("Server Running");
+    console.log(`Server Running on port ${env.PORT}`);
   } else {
     console.log(err);
   }
